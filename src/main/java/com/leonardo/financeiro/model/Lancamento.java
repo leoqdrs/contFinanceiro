@@ -13,6 +13,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 
 @Entity
 @Table(name = "lancamento")
@@ -30,5 +32,34 @@ public class Lancamento {
 	  @Enumerated(EnumType.STRING)
 	  private TipoLancamento tipo;
 	  private BigDecimal valor;
-
+	
+	public Lancamento(String descricao, LocalDate data, Categoria categoria, TipoLancamento tipo, BigDecimal valor) {
+		this.descricao = descricao;
+		this.data = data;
+		this.categoria = categoria;
+		this.tipo = tipo;
+		this.valor = valor;
+	}
+	public Lancamento() {
+		// TODO Auto-generated constructor stub
+	}
+	  
+	public Integer getCodigo() {
+		return codigo;
+	}
+	public String getDescricao() {
+		return descricao;
+	}
+	public LocalDate getData() {
+		return data;
+	}
+	public Categoria getCategoria() {
+		return categoria;
+	}
+	public TipoLancamento getTipo() {
+		return tipo;
+	}
+	public BigDecimal getValor() {
+		return valor;
+	}
 }
