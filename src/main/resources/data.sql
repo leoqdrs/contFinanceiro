@@ -1,0 +1,31 @@
+INSERT INTO categoria (nome, limite_mensal) VALUES
+('Alimentação', '0'),
+('Educação', '0'),
+('Lazer', '200'),
+('Turismo', '0'),
+('Vestuário', '0'),
+('Outro', '0');
+
+INSERT INTO lancamento (descricao, data, codigo_categoria, tipo, valor) VALUES
+('Salário mensal', '2021-06-01', 6, 'RECEITA', 6500.00),
+('Café', '2021-06-10', 1, 'DESPESA', 8.32),
+('Mensalidade curso', '2021-06-10', 2, 'DESPESA', 2000.00),
+('Viagem Ubatuba', '2021-06-12', 4, 'DESPESA', 400.00),
+('Cinema', '2021-06-22', 3, 'DESPESA', 25.50),
+('Roupa', '2021-06-27', 5, 'DESPESA', 125.50),
+('Salário mensal', '2021-07-01', 6, 'RECEITA', 6500.00),
+('Dividendos', '2021-07-01', 6, 'RECEITA', 1500.00),
+('Café', '2021-07-10', 1, 'DESPESA', 8.32),
+('Mensalidade curso', '2021-07-10', 2, 'DESPESA', 2000.00),
+('Cinema', '2021-07-22', 3, 'DESPESA', 25.50),
+('Roupa', '2021-07-27', 5, 'DESPESA', 125.50),
+('Salário mensal', '2021-08-01', 6, 'RECEITA', 6500.00),
+('Café', '2021-08-10', 1, 'DESPESA', 8.32),
+('Mensalidade curso', '2021-08-10', 2, 'DESPESA', 2000.00),
+('Cinema', '2021-08-22', 3, 'DESPESA', 25.50),
+('Roupa', '2021-08-27', 5, 'DESPESA', 125.50),
+('Salário mensal', '2021-09-01', 6, 'RECEITA', 6500.00),
+('Café', '2021-09-10', 1, 'DESPESA', 8.32),
+('Mensalidade curso', '2021-09-10', 2, 'DESPESA', 2000.00),
+('Cinema', '2021-09-22', 3, 'DESPESA', 25.50),
+('Roupa', '2021-09-27', 5, 'DESPESA', 125.50);

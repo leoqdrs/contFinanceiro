@@ -37,5 +37,23 @@
 			<attribute name="maven.scope" value="compile"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/leoqd/.m2/repository/io/springfox/springfox-swagger2/3.0.0/springfox-swagger2-3.0.0.jar" sourcepath="C:/Users/leoqd/.m2/repository/io/springfox/springfox-swagger2/3.0.0/springfox-swagger2-3.0.0-sources.jar">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+			<attribute name="maven.groupId" value="io.springfox"/>
+			<attribute name="maven.artifactId" value="springfox-swagger2"/>
+			<attribute name="maven.version" value="3.0.0"/>
+			<attribute name="maven.scope" value="compile"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/leoqd/.m2/repository/io/springfox/springfox-spring-web/3.0.0/springfox-spring-web-3.0.0.jar" sourcepath="C:/Users/leoqd/.m2/repository/io/springfox/springfox-spring-web/3.0.0/springfox-spring-web-3.0.0-sources.jar">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+			<attribute name="maven.groupId" value="io.springfox"/>
+			<attribute name="maven.artifactId" value="springfox-spring-web"/>
+			<attribute name="maven.version" value="3.0.0"/>
+			<attribute name="maven.scope" value="compile"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
