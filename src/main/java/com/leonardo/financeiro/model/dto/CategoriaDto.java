@@ -7,11 +7,11 @@ import com.leonardo.financeiro.model.Categoria;
 public class CategoriaDto {
 
   private String nome;
-  private BigDecimal limiteMensal;
+  private BigDecimal limite;
   
-  public CategoriaDto(String nome, BigDecimal limiteMensal) {
+  public CategoriaDto(String nome, BigDecimal limite) {
 	this.nome = nome;
-	this.limiteMensal = limiteMensal;
+	this.limite = limite;
   }
   
   public CategoriaDto() {
@@ -26,16 +26,16 @@ public class CategoriaDto {
     this.nome = nome;
   }
 
-  public BigDecimal getLimiteMensal() {
-	return limiteMensal;
+  public BigDecimal getLimite() {
+	return limite;
   }
   
-  public void setLimiteMensal(BigDecimal limiteMensal) {
-	this.limiteMensal = limiteMensal;
+  public void setLimite(BigDecimal limite) {
+	this.limite = limite;
   }
 
 public Categoria getCategoria() {
-	Categoria categoria = new Categoria(nome, limiteMensal);
+	Categoria categoria = new Categoria(nome, limite);
 	return categoria;
 }
 

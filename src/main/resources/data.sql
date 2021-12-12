@@ -1,4 +1,4 @@
-INSERT INTO categoria (nome, limite_mensal) VALUES
+INSERT INTO categoria (nome, limite) VALUES
 ('Alimentação', '0'),
 ('Educação', '0'),
 ('Lazer', '200'),
@@ -6,7 +6,7 @@ INSERT INTO categoria (nome, limite_mensal) VALUES
 ('Vestuário', '0'),
 ('Outro', '0');
 
-INSERT INTO lancamento (descricao, data, codigo_categoria, tipo, valor) VALUES
+INSERT INTO lancamento (descricao, data, categoria_codigo, tipo, valor) VALUES
 ('Salário mensal', '2021-06-01', 6, 'RECEITA', 6500.00),
 ('Café', '2021-06-10', 1, 'DESPESA', 8.32),
 ('Mensalidade curso', '2021-06-10', 2, 'DESPESA', 2000.00),

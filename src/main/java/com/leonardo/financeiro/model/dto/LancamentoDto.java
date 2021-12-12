@@ -33,15 +33,19 @@ public class LancamentoDto {
 	public String getDescricao() {
 		return descricao;
 	}
+	
 	public LocalDate getData() {
 		return data;
 	}
-	public Integer getCategoria() {
+	
+	public Integer getCategoriaId() {
 		return categoriaId;
 	}
+	
 	public TipoLancamento getTipo() {
 		return tipo;
 	}
+	
 	public BigDecimal getValor() {
 		return valor;
 	}

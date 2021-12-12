@@ -3,6 +3,7 @@ package com.leonardo.financeiro.model;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -26,8 +27,8 @@ public class Lancamento {
 	  private String descricao;
 	  private LocalDate data;
 	  @JsonIgnore
-	  @ManyToOne
-	  @JoinColumn(name = "codigo_categoria")
+	  @ManyToOne(cascade = CascadeType.ALL)
+	  @JoinColumn(name = "categoria_codigo")
 	  private Categoria categoria;
 	  @Enumerated(EnumType.STRING)
 	  private TipoLancamento tipo;
@@ -47,18 +48,23 @@ public class Lancamento {
 	public Integer getCodigo() {
 		return codigo;
 	}
+	
 	public String getDescricao() {
 		return descricao;
 	}
+	
 	public LocalDate getData() {
 		return data;
 	}
+	
 	public Categoria getCategoria() {
 		return categoria;
 	}
+	
 	public TipoLancamento getTipo() {
 		return tipo;
 	}
+	
 	public BigDecimal getValor() {
 		return valor;
 	}

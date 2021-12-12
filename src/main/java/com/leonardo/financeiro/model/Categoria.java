@@ -1,13 +1,15 @@
 package com.leonardo.financeiro.model;
 
 import java.math.BigDecimal;
-import java.util.Objects;
+import java.util.ArrayList;
+import java.util.List;
 
-import javax.persistence.Column;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -18,12 +20,14 @@ public class Categoria {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Integer codigo;
   private String nome;
-  @Column(name = "limite_mensal", nullable = true)
-  private BigDecimal limiteMensal;
+  private BigDecimal limite;
   
-  public Categoria(String nome, BigDecimal limiteMensal) {
+  @OneToMany(mappedBy = "categoria", cascade = CascadeType.ALL)
+  private List<Lancamento> lancamentos = new ArrayList<>();
+  
+  public Categoria(String nome, BigDecimal limite) {
 	this.nome = nome;
-	this.limiteMensal = limiteMensal;
+	this.limite = limite;
   }
   
   public Categoria() {
@@ -37,25 +41,13 @@ public class Categoria {
   public String getNome() {
     return nome;
   }
-
-  public void setNome(String nome) {
-    this.nome = nome;
+  
+  public BigDecimal getLimite() {
+	return limite;
   }
-
-  @Override
-  public boolean equals(Object o) {
-    if (o == this)
-      return true;
-    if (!(o instanceof Categoria)) {
-      return false;
-    }
-    Categoria categoria = (Categoria) o;
-    return Objects.equals(codigo, categoria.codigo);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(codigo);
+  
+  public List<Lancamento> getLancamentos() {
+	return lancamentos;
   }
 
 }

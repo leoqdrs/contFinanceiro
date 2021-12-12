@@ -1,5 +1,6 @@
 package com.leonardo.financeiro.service;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 import javax.persistence.EntityNotFoundException;
@@ -33,6 +34,27 @@ public class CategoriaService {
 
 	public List<Categoria> buscarCategorias() {
 		return categoriaRepository.findAll();
+	}
+	
+    public Categoria alteraCategoria(Categoria categoria) {
+        Categoria retornoCategoria = categoriaRepository.findById(categoria.getCodigo()).orElseThrow(() -> new EntityNotFoundException("Categoria de id " + categoria.getCodigo() + " não encontrado"));
+        if (retornoCategoria != null) {
+            return categoriaRepository.save(categoria);
+        }
+        return categoria;
+    }
+
+
+    public void deletaCategoria(Integer id) {
+        Categoria retornoCategoria = categoriaRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Categoria de id " + id + " não encontrado"));
+        if (retornoCategoria != null) {
+            categoriaRepository.deleteById(retornoCategoria.getCodigo());
+        }
+    }
+
+	public BigDecimal buscarLimite(Integer id) {
+		BigDecimal retornoCategoria = categoriaRepository.getLimite(id);
+		return retornoCategoria;
 	}
 
 }
