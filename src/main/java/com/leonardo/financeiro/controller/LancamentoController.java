@@ -81,4 +81,24 @@ public class LancamentoController {
 		return lancamentoService.listarLancamentosporCategoria(nome);
 	}
 	
+	@GetMapping("/data/{valor}")
+	public List<Lancamento> listarLancamentosporData(@PathVariable String valor){
+		return lancamentoService.listarLancamentosporData(valor);
+	}
+
+	@GetMapping("/dia/{valor}")
+	public List<Lancamento> listarLancamentosporDia(@PathVariable String valor){
+		return lancamentoService.listarLancamentosporDia(valor);
+	}
+	
+	@GetMapping("/semana/{valor}")
+	public List<Lancamento> listarLancamentosporSemana(@PathVariable String valor){
+		return lancamentoService.listarLancamentosporSemana(valor);
+	}
+	
+	@GetMapping("/mes/{valor}")
+	public List<Lancamento> listarLancamentosporMes(@PathVariable String valor){
+		return lancamentoService.listarLancamentosporMes(valor);
+	}
+	
 }

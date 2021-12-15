@@ -33,8 +33,8 @@ public class Categoria {
   public Categoria() {
 	// TODO Auto-generated constructor stub
   }
-  
-  public Integer getCodigo() {
+
+public Integer getCodigo() {
     return codigo;
   }
 

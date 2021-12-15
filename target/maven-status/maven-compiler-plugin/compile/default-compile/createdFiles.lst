@@ -1,0 +1,13 @@
+com\leonardo\financeiro\ContFinanceiroApplication.class
+com\leonardo\financeiro\model\dto\CategoriaDto.class
+com\leonardo\financeiro\service\CategoriaService.class
+com\leonardo\financeiro\model\Categoria.class
+com\leonardo\financeiro\repository\LancamentoRepository.class
+com\leonardo\financeiro\config\SwaggerConfig.class
+com\leonardo\financeiro\model\dto\LancamentoDto.class
+com\leonardo\financeiro\model\Lancamento.class
+com\leonardo\financeiro\service\LancamentoService.class
+com\leonardo\financeiro\controller\CategoriaController.class
+com\leonardo\financeiro\controller\LancamentoController.class
+com\leonardo\financeiro\model\TipoLancamento.class
+com\leonardo\financeiro\repository\CategoriaRepository.class

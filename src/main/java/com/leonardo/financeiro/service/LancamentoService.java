@@ -1,5 +1,6 @@
 package com.leonardo.financeiro.service;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -70,6 +71,29 @@ public class LancamentoService {
 
 	public List<Lancamento> listarLancamentosporCategoria(String nome) {
 		List<Lancamento> resultado = lancamentoRepository.findByCategoria(nome);
+		return resultado;
+	}
+
+	public List<Lancamento> listarLancamentosporData(String valor) {
+		LocalDate ld = LocalDate.parse(valor) ;
+		List<Lancamento> resultado = lancamentoRepository.findByDate(ld);
+		return resultado;
+	}
+
+	public List<Lancamento> listarLancamentosporDia(String valor) {
+		List<Lancamento> resultado = lancamentoRepository.findByDia(valor);
+		return resultado;
+	}
+
+	public List<Lancamento> listarLancamentosporSemana(String valor) {
+		LocalDate inicio = LocalDate.parse(valor);
+		LocalDate fim = inicio.plusDays(7);
+		List<Lancamento> resultado = lancamentoRepository.findBySemana(inicio, fim);
+		return resultado;
+	}
+
+	public List<Lancamento> listarLancamentosporMes(String valor) {
+		List<Lancamento> resultado = lancamentoRepository.findByMes(valor);
 		return resultado;
 	}
 

@@ -1,0 +1,38 @@
+version: '3.9'
+services:
+  db:
+    image: mysql
+    volumes:
+      - "dbdata:/var/lib/mysql"
+    container_name: db_ControleFi
+    environment:
+       - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+       - MYSQL_ROOT_PASSWORD=controlefi
+       - MYSQL_DATABASE=controlefi
+       - MYSQL_USER=user_controlefi
+       - MYSQL_PASSWORD=controlefi@123
+    healthcheck:
+      test: ["CMD", 'mysqladmin', 'ping', '-h', 'localhost', '-u', 'root', '-p$$MYSQL_ROOT_PASSWORD' ]
+      start_period: 60s
+    ports:
+      - 3306:3306
+    networks: 
+      - sistema-network 
+  backend:
+    build: .
+    container_name: ControleFi
+    restart: on-failure    
+    ports:
+      - 8080:8080
+    environment: 
+      - DATABASE_HOST=db_ControleFi 
+      - DATABASE_USER=user_controlefi
+      - DATABASE_NAME=controlefi
+      - DATABASE_PORT=3306
+    networks:
+      - sistema-network
+networks:
+  sistema-network:
+    driver: bridge
+volumes:
+  dbdata:
